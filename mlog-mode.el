@@ -330,7 +330,7 @@
          (constants mlog-constants)
          (builtins (append mlog-marker-controls mlog-unit-controls mlog-radar-sort))
          (operators (append mlog-conditional-operators mlog-logic-operators)))
-    `(("^ *\\(\\w+\\):" . (1 font-lock-function-name-face))
+    `(("^ *\\(\\w+\\): *$" . (1 font-lock-function-name-face))
       ("^ *jump \\(\\w+\\)" . (1 font-lock-function-name-face))
       (,(regexp-opt variables 'symbols) . font-lock-variable-name-face)
       (,(regexp-opt keywords 'words) . font-lock-keyword-face)
