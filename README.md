@@ -1,6 +1,6 @@
 # mlog-mode
 
-A major mode for editing Mindustry logic (mlog) code.  
+A major mode for editing [Mindustry](https://mindustrygame.github.io) logic (mlog) code.  
 This package provides syntax highlighting for mlog.
 
 ## Requirements
