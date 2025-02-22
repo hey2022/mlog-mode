@@ -347,12 +347,14 @@
     table)
   "Syntax table for `mlog-mode'.")
 
+;;;###autoload
 (define-derived-mode mlog-mode asm-mode "mlog"
   "Major mode for editing Mindustry logic."
   (setq-local comment-start "# ")
   (setq-local comment-end "")
   (setq-local font-lock-defaults  '(mlog-keywords)))
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.\\(mlog\\|masm\\)\\'" . mlog-mode))
 
 (provide 'mlog-mode)

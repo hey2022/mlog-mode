@@ -14,16 +14,14 @@ This package provides syntax highlighting for mlog.
 
 ``` emacs-lisp
 (use-package mlog-mode
-  :ensure (mlog-mode :host github :repo "hey2022/mlog-mode")
-  :mode ("\\.\\(mlog\\|masm\\)\\'"))
+  :ensure (mlog-mode :host github :repo "hey2022/mlog-mode"))
 ```
 
 ### Using straight.el (use-package)
 
 ``` emacs-lisp
 (use-package mlog-mode
-  :straight (mlog-mode :type git :host github :repo "hey2022/mlog-mode")
-  :mode ("\\.\\(mlog\\|masm\\)\\'"))
+  :straight (mlog-mode :type git :host github :repo "hey2022/mlog-mode"))
 ```
 
 ### Using doomemacs
@@ -38,6 +36,5 @@ In `packages.el`
 In `config.el`
 
 ``` emacs-lisp
-(use-package! mlog-mode
-  :mode ("\\.\\(mlog\\|masm\\)\\'"))
+(use-package! mlog-mode)
 ```
