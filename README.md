@@ -1,5 +1,7 @@
 # mlog-mode
 
+![example of syntax highlighting](./docs/images/showcase.png)
+
 A major mode for editing [Mindustry](https://mindustrygame.github.io) logic (mlog) code.  
 This package provides syntax highlighting for mlog.
 
