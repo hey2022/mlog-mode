@@ -62,10 +62,11 @@
 
 ;; https://github.com/Anuken/Mindustry/blob/master/core/src/mindustry/logic/LAccess.java
 (defvar mlog-access
-  '("totalItems" "firstItem" "totalLiquids" "totalPower" "itemCapacity" "liquidCapacity" "powerCapacity" "powerNetStored" "powerNetCapacity" "powerNetIn" "powerNetOut" "ammo" "ammoCapacity" "currentAmmoType" "health" "maxHealth" "heat" "shield" "armor" "efficiency" "progress" "timescale" "rotation" "x" "y" "velocityX" "velocityY" "shootX" "shootY" "cameraX" "cameraY" "cameraWidth" "cameraHeight" "size" "solid" "dead" "range" "shooting" "boosting" "mineX" "mineY" "mining" "speed" "team" "type" "flag" "controlled" "controller" "name" "payloadCount" "payloadType" "id"
+  '("totalItems" "firstItem" "totalLiquids" "totalPower" "itemCapacity" "liquidCapacity" "powerCapacity" "powerNetStored" "powerNetCapacity" "powerNetIn" "powerNetOut" "ammo" "ammoCapacity" "currentAmmoType" "health" "maxHealth" "heat" "shield" "armor" "efficiency" "progress" "timescale" "rotation" "x" "y" "velocityX" "velocityY" "shootX" "shootY" "cameraX" "cameraY" "cameraWidth" "cameraHeight" "size" "solid" "dead" "range" "shooting" "boosting" "mineX" "mineY" "mining" "speed" "team" "type" "flag" "controlled" "controller" "name" "payloadCount" "payloadType" "id"))
 
-    ;; values with parameters are considered controllable
-    "enabled" "shoot" "shootp" "config" "color"))
+(defvar mlog-parameters
+  ;; values with parameters are considered controllable
+  '("enabled" "shoot" "shootp" "config" "color"))
 
 ;; https://github.com/Anuken/Mindustry/blob/master/core/src/mindustry/logic/LAssembler.java
 (defvar mlog-assembler
@@ -324,7 +325,7 @@
   '("core" "storage" "generator" "turret" "factory" "repair" "battery" "reactor" "extinguisher" "drill" "shield"))
 
 (defvar mlog-keywords
-  (let* ((variables (append mlog-global-variables (mapcar (lambda (variable) (concat "@" variable)) mlog-access) mlog-assembler))
+  (let* ((variables (append mlog-global-variables (mapcar (lambda (variable) (concat "@" variable)) mlog-access) mlog-parameters mlog-assembler))
          (keywords mlog-statements)
          (types (append mlog-locate mlog-radar-target mlog-tile-layer (mapcar (lambda (variable) (concat "@" (string-inflection-kebab-case-function variable))) (append mlog-blocks mlog-items mlog-liquids mlog-units)) mlog-block-flag))
          (constants mlog-constants)
